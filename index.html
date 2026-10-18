@@ -10,14 +10,14 @@
 <meta property="og:url" content="https://bradiox.com/">
 <meta property="og:site_name" content="bRadioX">
 <meta property="og:title" content="bRadioX · Radio you can join">
-<meta property="og:description" content="Live shows in the bRadio Lounge. Raise your hand to speak.">
+<meta property="og:description" content="Live shows in the bRadio Lounge, part of bWalletX. Raise your hand to speak.">
 <meta property="og:image" content="https://bradiox.com/og-bradiox-v1.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="bRadioX: Radio you can join. Gold radio waves on black.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="bRadioX · Radio you can join">
-<meta name="twitter:description" content="Live shows in the bRadio Lounge. Raise your hand to speak.">
+<meta name="twitter:description" content="Live shows in the bRadio Lounge, part of bWalletX. Raise your hand to speak.">
 <meta name="twitter:image" content="https://bradiox.com/og-bradiox-v1.png">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -133,12 +133,26 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
 </style>
 </head>
 <body>
+<!-- Part of bWalletX strip (shared snippet, same on every bWalletX product site; source: bwalletx-site/brand/part-of-bwalletx.html) -->
+<style>
+.bwx-strip{background:#0a0a0b;border-bottom:1px solid rgba(255,210,77,.16);font:500 13px/1 'IBM Plex Sans',system-ui,-apple-system,sans-serif}
+.bwx-strip a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:36px;padding:0 16px;color:#cfcabd;text-decoration:none;letter-spacing:.01em}
+.bwx-strip svg{width:12px;height:16px;flex:none;display:block}
+.bwx-strip b{color:#ffd24d;font-weight:600}
+.bwx-strip .bwx-go{color:#7c7a73;transition:transform .16s cubic-bezier(.2,.8,.2,1),color .16s}
+.bwx-strip a:hover{color:#f4f1e8}
+.bwx-strip a:hover .bwx-go{color:#ffd24d;transform:translateX(2px)}
+.bwx-strip a:focus-visible{outline:2px solid #ffd24d;outline-offset:-4px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){.bwx-strip .bwx-go{transition:none}}
+</style>
+<aside class="bwx-strip" aria-label="bWalletX"><a href="https://bwalletx.com"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><defs><linearGradient id="bwx-g" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="0" y2="105"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient><mask id="bwx-m"><rect width="140" height="140" fill="#fff"/><circle cx="60" cy="72" r="15" fill="#000"/></mask></defs><g fill="url(#bwx-g)" mask="url(#bwx-m)"><polygon points="45,12 45,76 27,76 27,30"/><circle cx="60" cy="72" r="33"/></g></svg><span>Part of <b>bWalletX</b></span><span class="bwx-go" aria-hidden="true">&rarr;</span></a></aside>
+<!-- /Part of bWalletX strip -->
 <header class="wrap nav">
   <a class="brand" href="/" aria-label="bRadioX home"><img src="/logo.svg" alt="" width="22" height="30"><span>bRadio<span class="gold">X</span></span></a>
   <nav class="nav-links" aria-label="Main">
     <a class="hide-s" href="#how">How it works</a>
     <a class="hide-s" href="#status">Status</a>
-    <a class="btn btn-gold" href="https://www.bchatx.com/s/bradio">Listen now</a>
+    <a class="btn btn-gold" href="https://bwalletx.com/get">Get bWalletX</a>
   </nav>
 </header>
 
@@ -149,8 +163,8 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
     <h1>Radio you<br>can <span>join.</span></h1>
     <p class="lede">Live shows, interviews and podcasts in the bRadio Lounge. When a show is on, listen from any browser; raise your hand and you can be on air.</p>
     <div class="ctas">
-      <a class="btn btn-gold" href="https://www.bchatx.com/s/bradio">Listen in the bRadio Lounge</a>
-      <a class="btn btn-ghost" href="#status">What's live</a>
+      <a class="btn btn-gold" href="https://bwalletx.com/get">Get bWalletX</a>
+      <a class="btn btn-ghost" href="https://www.bchatx.com/s/bradio">Listen in the bRadio Lounge</a>
     </div>
     <p class="hint">Not on right now? Tap Notify me in the Lounge and you'll get a ping when it goes live.</p>
   </div>
@@ -240,7 +254,7 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
     <a class="brand" href="/"><img src="/logo.svg" alt="" width="18" height="24"><span>bRadio<span class="gold">X</span></span></a>
     <nav aria-label="Footer">
       <a href="https://www.bchatx.com">bChatX</a>
-      <a href="https://bwalletx.com">bWalletX</a>
+      <a href="https://bwalletx.com">bWalletX home</a>
       <a href="https://bwalletx.com/privacy">Privacy</a>
       <a href="https://bwalletx.com/terms">Terms</a>
     </nav>
