@@ -122,6 +122,8 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
 .waves .w{animation:pulse 2.4s var(--ease) infinite}
 .waves .w2{animation-delay:.3s}.waves .w3{animation-delay:.6s}
 @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+.onair{position:absolute;left:50%;bottom:4%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;white-space:nowrap;padding:10px 16px;border-radius:999px;border:1px solid var(--edge-gold);background:rgba(245,184,0,.06);font:600 14px/1 var(--hf);color:var(--ink)}
+.onair i{width:8px;height:8px;border-radius:50%;background:var(--gold)}
 .speakers{position:absolute;left:0;right:0;bottom:2%;display:flex;justify-content:center;gap:10px}
 .speakers span{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe58a,#c98f00);display:grid;place-items:center;font:700 15px/1 var(--hf);color:#000;box-shadow:0 0 0 3px #000}
 .speakers span.g{background:#23252b;color:var(--muted)}
@@ -152,7 +154,7 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
     </div>
     <p class="hint">Not on right now? Tap Notify me in the Lounge and you'll get a ping when it goes live.</p>
   </div>
-  <div class="waves" role="img" aria-label="Radio waves around a live microphone, with listeners below and one raising a hand.">
+  <div class="waves" role="img" aria-label="Gold radio waves around a microphone.">
     <svg viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient></defs>
       <g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-width="12">
         <circle cx="200" cy="170" r="30" fill="url(#g)"/>
@@ -160,7 +162,7 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
         <path class="w w2" d="M110 80a127 127 0 0 0 0 180M290 80a127 127 0 0 1 0 180"/>
         <path class="w w3" d="M74 44a178 178 0 0 0 0 252M326 44a178 178 0 0 1 0 252"/>
       </g></svg>
-    <div class="speakers"><span>R</span><span class="g">A</span><span class="g h">S</span><span class="g">J</span><span class="g">+</span></div>
+    <div class="onair"><i></i>On air when a show starts</div>
   </div>
 </div>
 
@@ -209,7 +211,7 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
       <li><span class="tag live">Live</span><p><b>Speak on air.</b> Sign in with bWalletX, raise your hand, and the host brings you on stage.</p></li>
       <li><span class="tag live">Live</span><p><b>Bitcoin Radio studio:</b> record in the browser and save recordings on-chain from your own bWalletX.</p></li>
       <li><span class="tag soon">Coming</span><p><b>A schedule of shows</b> on bCalX, each with its own page and calendar invite.</p></li>
-      <li><span class="tag soon">Coming</span><p><b>Paid shows:</b> listeners pay by the minute, and it goes straight to the people on stage.</p></li>
+      <li><span class="tag live">Live</span><p><b>Paid shows, if the host wants:</b> a host can charge by the minute, paid from the listener's own wallet straight to the people on stage. The Lounge is free.</p></li>
       <li><span class="tag soon">Coming</span><p><b>The $BRADIO token</b> on the Exchange, with the Lounge as its room.</p></li>
       <li><span class="tag soon">Coming</span><p><b>bRadioX, the radio exchange:</b> a token and a room for each show and artist.</p></li>
     </ul>
