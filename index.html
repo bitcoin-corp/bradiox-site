@@ -11,14 +11,14 @@
 <meta property="og:site_name" content="bRadioX">
 <meta property="og:title" content="bRadioX · Radio you can join">
 <meta property="og:description" content="Live shows in the bRadio Lounge, part of bWalletX. Raise your hand to speak.">
-<meta property="og:image" content="https://bradiox.com/og-bradiox-v1.png">
+<meta property="og:image" content="https://bradiox.com/og-bradiox-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="bRadioX: Radio you can join. Gold radio waves on black.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="bRadioX · Radio you can join">
 <meta name="twitter:description" content="Live shows in the bRadio Lounge, part of bWalletX. Raise your hand to speak.">
-<meta name="twitter:image" content="https://bradiox.com/og-bradiox-v1.png">
+<meta name="twitter:image" content="https://bradiox.com/og-bradiox-v2.png">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -130,6 +130,34 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
 .speakers span.h{position:relative}
 .speakers span.h::after{content:"✋";position:absolute;right:-6px;top:-8px;font-size:16px}
 @media (prefers-reduced-motion:reduce){.waves .w{animation:none;opacity:.8}html{scroll-behavior:auto}}
+
+/* Hero animation: station card arrives → EQ bars rise → ON AIR tag → listeners count up → speakers → tip chip pops. ~3 s, then only the EQ breathes softly. */
+html,body{overflow-x:clip}
+.stage{position:relative;justify-self:center;width:100%;max-width:440px}
+.stage::before{content:"";position:absolute;inset:-8% -10%;z-index:-1;background:radial-gradient(closest-side,rgba(245,184,0,.2),transparent 70%)}
+.station{position:relative;background:var(--card);border:1px solid var(--edge-gold);border-radius:24px;padding:24px 24px 28px;box-shadow:0 40px 80px -40px rgba(245,184,0,.45);animation:r-arrive .9s var(--ease) both}
+.stage.wait,.stage.wait *{animation-play-state:paused!important}
+.st-h{display:flex;justify-content:space-between;align-items:center;font:600 14px/1 var(--hf);color:var(--muted)}
+.st-brand{display:inline-flex;align-items:center;gap:8px}
+.stage .example{font:500 11px/1 var(--hf);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.st-t{margin:18px 0 12px;font:700 26px/1.15 var(--hf);letter-spacing:-.02em;animation:r-up .5s var(--ease) .45s both}
+.st-m{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.tagon{padding:6px 10px;border-radius:999px;background:rgba(255,90,79,.12);border:1px solid rgba(255,90,79,.35);color:#ff8a80;font:700 12px/1 var(--hf);letter-spacing:.12em;animation:r-pop .45s cubic-bezier(.3,1.4,.5,1) 1.2s both}
+.tagon b{color:#ff5a4f;animation:r-blink 1.8s ease-in-out 3.2s infinite}
+.lis{font:600 15px/1 var(--hf);color:var(--gold-hi);font-variant-numeric:tabular-nums;animation:r-up .4s var(--ease) 1.35s both}
+.eq{display:flex;align-items:flex-end;gap:5px;height:96px;margin:22px 0 20px}
+.eq i{flex:1;height:100%;border-radius:4px;background:var(--grad);transform-origin:bottom;transform:scaleY(var(--h));animation:r-rise .7s var(--ease) both,r-eq 1.6s ease-in-out infinite alternate;animation-delay:calc(.55s + var(--i) * 30ms),calc(2.6s + var(--i) * -170ms)}
+.stage .speakers{position:static;justify-content:flex-start;animation:r-up .5s var(--ease) 1.9s both}
+.stage .speakers span{width:40px;height:40px;font-size:14px;box-shadow:0 0 0 3px var(--card)}
+.tip{position:absolute;right:-10px;bottom:-16px;padding:9px 14px;border-radius:999px;background:var(--grad);color:#000;font:600 13px/1 var(--hf);white-space:nowrap;box-shadow:0 10px 30px -8px rgba(245,184,0,.6);animation:r-pop .5s cubic-bezier(.3,1.4,.5,1) 2.5s both}
+@keyframes r-arrive{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes r-up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes r-pop{from{opacity:0;transform:translateY(8px) scale(.85)}to{opacity:1;transform:none}}
+@keyframes r-rise{from{transform:scaleY(.04)}to{transform:scaleY(var(--h))}}
+@keyframes r-eq{from{transform:scaleY(var(--h))}to{transform:scaleY(calc(var(--h) * .55))}}
+@keyframes r-blink{0%,100%{opacity:1}50%{opacity:.3}}
+@media (max-width:420px){.station{padding:20px 18px 26px}.st-t{font-size:23px}.eq{gap:4px;height:84px}.tip{right:-4px}}
+@media (prefers-reduced-motion:reduce){.stage *{animation:none!important}}
 </style>
 </head>
 <body>
@@ -168,15 +196,15 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
     </div>
     <p class="hint">Not on right now? Tap Notify me in the Lounge and you'll get a ping when it goes live.</p>
   </div>
-  <div class="waves" role="img" aria-label="Gold radio waves around a microphone.">
-    <svg viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient></defs>
-      <g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-width="12">
-        <circle cx="200" cy="170" r="30" fill="url(#g)"/>
-        <path class="w" d="M146 116a76 76 0 0 0 0 108M254 116a76 76 0 0 1 0 108"/>
-        <path class="w w2" d="M110 80a127 127 0 0 0 0 180M290 80a127 127 0 0 1 0 180"/>
-        <path class="w w3" d="M74 44a178 178 0 0 0 0 252M326 44a178 178 0 0 1 0 252"/>
-      </g></svg>
-    <div class="onair"><i></i>On air when a show starts</div>
+  <div class="stage" role="img" aria-label="Example station card: a live show on air, an equaliser moving, listeners counting up, and a tip arriving.">
+    <div class="station">
+      <div class="st-h"><span class="st-brand"><svg width="22" height="22" viewBox="0 0 400 400" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient></defs><g fill="none" stroke="url(#g)" stroke-linecap="round" stroke-width="28"><circle cx="200" cy="200" r="44" fill="url(#g)" stroke="none"/><path d="M130 130a100 100 0 0 0 0 140M270 130a100 100 0 0 1 0 140"/><path d="M70 70a184 184 0 0 0 0 260M330 70a184 184 0 0 1 0 260"/></g></svg>bRadio · Station</span><span class="example">Example</span></div>
+      <div class="st-t">Late-night live set</div>
+      <div class="st-m"><span class="tagon"><b>●</b> ON AIR</span><span class="lis"><span class="count" data-to="214">214</span> listening</span></div>
+      <div class="eq" aria-hidden="true"><i style="--i:0;--h:0.45"></i><i style="--i:1;--h:0.70"></i><i style="--i:2;--h:0.55"></i><i style="--i:3;--h:0.90"></i><i style="--i:4;--h:0.65"></i><i style="--i:5;--h:0.80"></i><i style="--i:6;--h:0.50"></i><i style="--i:7;--h:0.95"></i><i style="--i:8;--h:0.60"></i><i style="--i:9;--h:0.75"></i><i style="--i:10;--h:0.40"></i><i style="--i:11;--h:0.85"></i><i style="--i:12;--h:0.60"></i><i style="--i:13;--h:0.70"></i><i style="--i:14;--h:0.50"></i><i style="--i:15;--h:0.80"></i><i style="--i:16;--h:0.45"></i><i style="--i:17;--h:0.65"></i></div>
+      <div class="speakers"><span>H</span><span>A</span><span class="h">S</span><span class="g">+3</span></div>
+      <span class="tip" aria-hidden="true">&#9889; $sam tipped the host · 10¢</span>
+    </div>
   </div>
 </div>
 
@@ -261,5 +289,14 @@ footer{border-top:1px solid #121317;padding:40px 0 56px;color:var(--dim);font-si
     <span>By The Bitcoin Corporation Ltd.</span>
   </div>
 </footer>
+<script>
+(function(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+var st=document.querySelector('.stage');if(!st)return;var cs=st.querySelectorAll('.count');
+cs.forEach(function(el){el.textContent='0'});st.classList.add('wait');
+function go(){st.classList.remove('wait');cs.forEach(function(el){var to=+el.dataset.to,d=1300,s=null;
+setTimeout(function(){requestAnimationFrame(function f(t){s=s||t;var k=Math.min(1,(t-s)/d);k=1-Math.pow(1-k,3);el.textContent=Math.round(to*k);if(k<1)requestAnimationFrame(f)})},1350)})}
+if(!('IntersectionObserver' in window))return go();
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){io.disconnect();go()}},{threshold:.4});io.observe(st)})();
+</script>
 </body>
 </html>
