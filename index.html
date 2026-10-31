@@ -170,6 +170,7 @@ html,body{overflow-x:clip}
 .rx-ghost{position:absolute;right:-20px;bottom:-50px;font:800 clamp(140px,22vw,300px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:2px rgba(160,82,45,.3);z-index:1;pointer-events:none;white-space:nowrap}
 .rx-tx{position:absolute;inset:0;z-index:1;pointer-events:none;background:repeating-radial-gradient(circle at 100% 50%,transparent 0 26px,rgba(160,82,45,.3) 26px 28px);-webkit-mask-image:linear-gradient(270deg,#000,transparent 65%);mask-image:linear-gradient(270deg,#000,transparent 65%)}
 .rx-hero .rx-ghost{bottom:-30px}
+@media(max-width:700px){.rx-ghost,.rx-tx,.rx-lb,.rx-eq{display:none!important}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@800&display=swap" rel="stylesheet">
 </head>
@@ -190,7 +191,7 @@ html,body{overflow-x:clip}
 .hero h1 .hbl{display:inline-block;height:.95em;width:auto;vertical-align:-.03em;margin-right:.04em}
 .xs-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 </style>
-<aside class="bwx-strip" aria-label="bWalletX"><a href="https://bwalletx.com"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><defs><linearGradient id="bwx-g" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="0" y2="105"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient><mask id="bwx-m"><rect width="140" height="140" fill="#fff"/><circle cx="60" cy="72" r="15" fill="#000"/></mask></defs><g fill="url(#bwx-g)" mask="url(#bwx-m)"><polygon points="45,12 45,76 27,76 27,30"/><circle cx="60" cy="72" r="33"/></g></svg><span>Part of <b>bWalletX</b></span><span class="bwx-go" aria-hidden="true">&rarr;</span></a></aside>
+<aside class="bwx-strip" aria-label="bWalletX"><a href="https://bwalletx.com"><svg viewBox="23 8 74 100" aria-hidden="true" focusable="false"><defs><linearGradient id="bwx-g" gradientUnits="userSpaceOnUse" x1="0" y1="12" x2="0" y2="105"><stop offset="0" stop-color="#FFE58A"/><stop offset=".55" stop-color="#FFD24D"/><stop offset="1" stop-color="#C98F00"/></linearGradient></defs><path fill="url(#bwx-g)" d="M45 12V72H27V30Z M27 72a33 33 0 1 1 66 0a33 33 0 1 1-66 0Z M45 72a15 15 0 1 0 30 0a15 15 0 1 0-30 0Z"/></svg><span>Part of <b>bWalletX</b></span><span class="bwx-go" aria-hidden="true">&rarr;</span></a></aside>
 <!-- /Part of bWalletX strip -->
 <header class="wrap nav">
   <a class="brand" href="/" aria-label="bRadioX home"><img src="/logo.svg" alt="" width="22" height="30"><span><span class="xs-sr">b</span><span class="nm">Radio</span><span class="xw">X</span></span></a>
