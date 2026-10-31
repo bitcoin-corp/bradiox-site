@@ -162,6 +162,16 @@ html,body{overflow-x:clip}
 @media (prefers-reduced-motion:reduce){.stage *{animation:none!important}}
 
 </style>
+<style>
+.rx-hero{position:relative;isolation:isolate;overflow:hidden}
+.rx-hero h1{font-family:'Space Grotesk',system-ui,sans-serif;font-weight:800;letter-spacing:-.02em}
+.rx-hero>*:not(.rx-ghost):not(.rx-tx){position:relative;z-index:2}
+.rx-hero h1 .nm.rx-g{background:linear-gradient(90deg,#6b3410,#A0522D 45%,#e8b98f);-webkit-background-clip:text;background-clip:text;color:transparent!important;filter:drop-shadow(0 3px 0 #000)}
+.rx-ghost{position:absolute;right:-20px;bottom:-50px;font:800 clamp(140px,22vw,300px)/1 'Space Grotesk',sans-serif;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:2px rgba(160,82,45,.3);z-index:1;pointer-events:none;white-space:nowrap}
+.rx-tx{position:absolute;inset:0;z-index:1;pointer-events:none;background:repeating-radial-gradient(circle at 100% 50%,transparent 0 26px,rgba(160,82,45,.3) 26px 28px);-webkit-mask-image:linear-gradient(270deg,#000,transparent 65%);mask-image:linear-gradient(270deg,#000,transparent 65%)}
+.rx-hero .rx-ghost{bottom:-30px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@800&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- Part of bWalletX strip (shared snippet, same on every bWalletX product site; source: bwalletx-site/brand/part-of-bwalletx.html) -->
@@ -192,10 +202,10 @@ html,body{overflow-x:clip}
 </header>
 
 <main>
-<div class="wrap hero">
+<div class="wrap hero rx-hero"><div class="rx-ghost" aria-hidden="true">RADIOX</div><div class="rx-tx" aria-hidden="true"></div>
   <div>
     <p class="eyebrow">Radio you can join · on bChatX and bWalletX</p>
-    <h1><img class="hbl" src="/logo.svg" alt=""><span class="xs-sr">b</span><span class="nm">Radio</span><span class="xw">X</span></h1>
+    <h1><img class="hbl" src="/logo.svg" alt=""><span class="xs-sr">b</span><span class="nm rx-g">RadioX</span></h1>
     <p class="lede">Live shows, interviews and podcasts in the bRadio Lounge. When a show is on, listen from any browser; raise your hand and you can be on air.</p>
     <div class="ctas">
       <a class="btn btn-gold" href="https://bwalletx.com/get">Get bWalletX</a>
